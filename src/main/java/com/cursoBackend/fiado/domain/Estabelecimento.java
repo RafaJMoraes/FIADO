@@ -10,12 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.hateoas.RepresentationModel;
 
 import com.cursoBackend.fiado.dto.EstabelecimentoDto;
 
 @Entity
 @Table(name = "establecimentos")
-public class Estabelecimento implements Serializable {
+public class Estabelecimento extends RepresentationModel<Estabelecimento> implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
