@@ -48,6 +48,15 @@ public class Cliente implements Serializable {
 		this.telefone = telefone;
 	}
 	
+	public Cliente(UUID id, String nome, String documento, String telefone, Endereco endereco) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.documento = documento;
+		this.telefone = telefone;
+		this.endereco = endereco;
+	}
+	
 	public Cliente(ClienteDto dto) {
 		super();
 		this.nome = dto.getNome();

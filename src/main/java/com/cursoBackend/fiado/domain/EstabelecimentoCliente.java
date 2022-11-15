@@ -31,7 +31,6 @@ public class EstabelecimentoCliente implements Serializable {
 	@JoinColumn(name = "estabelecimento_id")
 	private Estabelecimento estabelecimento;
 	
-	
 	@ManyToOne
 	@JoinColumn(name = "cliente_id")
 	private Cliente cliente;
