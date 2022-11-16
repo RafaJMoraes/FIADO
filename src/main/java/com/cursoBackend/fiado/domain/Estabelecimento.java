@@ -16,7 +16,7 @@ import com.cursoBackend.fiado.dto.EstabelecimentoDto;
 
 @Entity
 @Table(name = "establecimentos")
-public class Estabelecimento extends RepresentationModel<Estabelecimento> implements Serializable {
+public class Estabelecimento extends UsuarioSistema implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
