@@ -1,53 +1,63 @@
 package com.cursoBackend.fiado.security;
 
 
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Optional;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.cursoBackend.fiado.domain.UsuarioSistema;
+
 public class DetalhesUsuario implements UserDetails {
+
+	/**
+	 * 
+	 */
+	
+	private static final long serialVersionUID = 4996708688894501428L;
+	private final Optional<UsuarioSistema> usuarioSistema;
+	
+	public DetalhesUsuario(Optional<UsuarioSistema> usuarioSistema) {
+		super();
+		this.usuarioSistema = usuarioSistema;
+	}
+
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
+		return Arrays.asList();
 	}
 
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
-		return null;
+		return usuarioSistema.orElse(new UsuarioSistema()).getHashPassword();
 	}
 
 	@Override
 	public String getUsername() {
-		// TODO Auto-generated method stub
-		return null;
+		return usuarioSistema.orElse(new UsuarioSistema()).getTelefone();
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 }

@@ -31,6 +31,38 @@ public class UsuarioSistema extends RepresentationModel<Estabelecimento> impleme
 	
 	private TipoUsuario tipoUsuario;
 
+	public UUID getId() {
+		return id;
+	}
+
+	public void setId(UUID id) {
+		this.id = id;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getHashPassword() {
+		return hashPassword;
+	}
+
+	public void setHashPassword(String hashPassword) {
+		this.hashPassword = hashPassword;
+	}
+
+	public TipoUsuario getTipoUsuario() {
+		return tipoUsuario;
+	}
+
+	public void setTipoUsuario(TipoUsuario tipoUsuario) {
+		this.tipoUsuario = tipoUsuario;
+	}
+
 
 
 	

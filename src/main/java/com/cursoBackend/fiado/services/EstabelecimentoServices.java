@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cursoBackend.fiado.domain.Estabelecimento;
+import com.cursoBackend.fiado.domain.UsuarioSistema;
 import com.cursoBackend.fiado.dto.EstabelecimentoDto;
 import com.cursoBackend.fiado.repository.EstabelecimentoRepository;
 
@@ -34,6 +35,11 @@ public class EstabelecimentoServices {
 	public Optional<Estabelecimento> findById(UUID estabelecimentoId) {
 		
 		return estabelecimentoRepository.findById(estabelecimentoId);
+	}
+
+
+	public Optional<UsuarioSistema> findByLogin(String username) {
+		return estabelecimentoRepository.findByTelefone(username);
 	}
 	
 }
