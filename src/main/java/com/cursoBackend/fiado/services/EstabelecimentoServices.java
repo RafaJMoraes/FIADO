@@ -27,7 +27,7 @@ public class EstabelecimentoServices {
 
 
 	public List<Estabelecimento> findAll() {
-		return estabelecimentoRepository.findAll();
+		return  (List<Estabelecimento>) estabelecimentoRepository.findAll();
 	}
 
 

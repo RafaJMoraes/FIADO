@@ -34,7 +34,7 @@ public class Estabelecimento extends RepresentationModel<Estabelecimento> implem
 	@org.hibernate.annotations.Type(type="uuid-char")
 	private UUID id;
 
-	@NotBlank
+	@NotBlank(message = "Nome não pode ser nulo ou vazio!")
 	private String nome;
 	
 	@Column(length = 14)

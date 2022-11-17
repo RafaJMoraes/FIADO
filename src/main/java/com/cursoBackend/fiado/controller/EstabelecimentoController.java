@@ -1,12 +1,18 @@
 package com.cursoBackend.fiado.controller;
 
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
+
 import java.util.List;
 import java.util.UUID;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,10 +24,6 @@ import com.cursoBackend.fiado.domain.Estabelecimento;
 import com.cursoBackend.fiado.dto.EstabelecimentoDto;
 import com.cursoBackend.fiado.services.EstabelecimentoServices;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
-
-
 
 @RestController
 @RequestMapping(value = "api/estabelecimentos")
@@ -32,6 +34,7 @@ public class EstabelecimentoController {
 	
 	@PostMapping(path = "/criar")
 	public ResponseEntity<Estabelecimento> criarEstabelecimento(
+			            @Valid
 						@RequestBody EstabelecimentoDto estabelecimentoDto) {
 		
 		return ResponseEntity.status(HttpStatus.OK).body(services.save(estabelecimentoDto));
