@@ -40,6 +40,7 @@ public class EstabelecimentoController {
 	@GetMapping()
 	public ResponseEntity<List<Estabelecimento>> estabelecimentos() {
 		List<Estabelecimento> list = services.findAll();
+		
 		if(!list.isEmpty()) {
 			for(Estabelecimento et : list) {
 				et.add(linkTo(methodOn(EstabelecimentoController.class).estabelecimentoPorId(et.getId())).withSelfRel());

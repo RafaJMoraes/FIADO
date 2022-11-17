@@ -31,7 +31,7 @@ public class SMSServices {
 		
 	    Twilio.init(sid,tokenTwilio);
 
-        Message.creator(phoneTo,phoneFrom, "Rafael não esqueça de sua compras fiadas!! ;)").create();
+        Message.creator(phoneTo,phoneFrom, "Rafael não esqueça de suas compras fiadas!! ;)").create();
         
         return "Mensagem enviada com Sucesso";
 
